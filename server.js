@@ -2,7 +2,7 @@ import express from "express";
 
 const app = express();
 
-// Ordner für statische Dateien (HTML, CSS, JS, Bilder)
+// Statische Dateien aus dem public-Ordner ausliefern
 app.use(express.static("public"));
 app.use(express.json());
 
@@ -16,3 +16,13 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server läuft auf Port", PORT);
 });
+
+const mongoose= require ("mongoose");
+
+mongoose. connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("MonogDB connected"))
+.catch(err => console.error(err));
+  
