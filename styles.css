@@ -1,0 +1,197 @@
+/* =========================================================
+   GLOBAL STYLES
+========================================================= */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgb(173, 95, 0);
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  justify-content: center;
+  background-color: rgb(173, 95, 0) !important;
+  border: none;
+}
+
+.navbar a {
+  color: white !important;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   STARTSEITE: SVG HERO
+========================================================= */
+
+.svg-container1 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.svg-container1 svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* =========================================================
+   STARTSEITE: SPIELERVERWALTUNG
+========================================================= */
+
+.player-management {
+  background: linear-gradient(to bottom right, black, rgb(173, 95, 0));
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.player-management h3 {
+  margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   SEITEN-HINTERGRUND
+========================================================= */
+
+.page-background {
+  background-image: url("images/hero.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   SPIELERKARTEN
+========================================================= */
+
+.player-card {
+  background: rgba(173, 95, 0, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.player-card h4 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.player-card.active {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.35);
+  border: 1px solid #ffc107;
+}
+
+/* =========================================================
+   501-SEITE: SCOREBOXEN
+========================================================= */
+
+.scorebox-player {
+  margin-top: 15px;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  background: rgba(173, 95, 0, 0.9);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.scorebox-player span {
+  font-size: 64px;
+  font-weight: 700;
+  color: #000;
+  text-shadow: 0 0 12px rgba(0,0,0,0.7);
+}
+
+
+/* =========================================================
+   MARKS (Cricket)
+========================================================= */
+
+.marks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25rem;
+}
+
+.mark-box {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   SCORE ANIMATION
+========================================================= */
+
+.score-animate {
+  animation: scorePop 0.3s ease;
+}
+
+@keyframes scorePop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+
+/* =========================================================
+   3-DART-MASKE
+========================================================= */
+
+.three-dart-mask {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dart-slot {
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+  transition: background-color 0.2s ease;
+}
+
+.dart-slot.filled {
+  background-color: rgba(13, 110, 253, 0.15);
+}
+
+.dart-mult.active,
+.dart-num.active {
+  background-color: #0d6efd !important;
+  color: white !important;
+  border-color: #0d6efd !important;
+}
+
+
